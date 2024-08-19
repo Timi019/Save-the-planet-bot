@@ -3,3 +3,4 @@ apscheduler==3.10.4
 tensorflow==2.13.0
 keras==2.13.1
 pillow==10.4.0
+python-dotenv==1.0.1

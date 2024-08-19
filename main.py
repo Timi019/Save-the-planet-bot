@@ -2,12 +2,14 @@ import discord,os,random
 from discord.ext import commands
 from discord import app_commands
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from dotenv import load_dotenv
 from model.model import detect_trash
 
 intents = discord.Intents.default()
+load_dotenv()
 # enable reading messages
 intents.message_content = True
-token = os.environ.get["TOKEN"]
+token = os.environ["TOKEN"]
 bot = commands.Bot(command_prefix='/',intents=intents)
 earthot = bot.get_emoji(1275024848405532735)
 channel_id = 1275019583446843433
