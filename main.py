@@ -57,7 +57,7 @@ async def say(interaction: discord.Interaction, tekstdogadania: str):
 @bot.tree.command(name='pomocy')
 async def help(interaction: discord.Interaction):
     advice = random.choice(facts)
-    await interaction.response.send_message(f"Oto twoja wskazówka: {advice}. Dbaj o planetę aby nie była <:earthot:1275024848405532735>")
+    await interaction.response.send_message(f"Oto twoja wskazówka: {advice} Dbaj o planetę aby nie była <:earthot:1275024848405532735>!")
 
 @bot.tree.command(name='pa')
 async def bye(interaction: discord.Interaction):
