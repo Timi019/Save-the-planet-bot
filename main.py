@@ -64,7 +64,16 @@ async def help(interaction: discord.Interaction):
 async def hello(interaction: discord.Interaction, attachment: discord.Attachment):
     name = attachment.filename
     await attachment.save(name)
-    result = detect_trash()
+    result = detect_trash(name, "model/keras_model.h5", "model/labels.txt")
+    con_score = result[1] * 100
+    result = result[0].strip()
+    if int(con_score) >= 70:
+        if result == "czerwonego":
+            await interaction.response.send_message(f"Jestem na {con_score}% pewny, że możesz wrzucić to do czerwonego lub żółtego pojemnika.")
+        else:
+            await interaction.response.send_message(f"Jestem na {con_score}% pewny, że powinieneś wrzucić to do {result} pojemnika.")
+    else:
+        await interaction.response.send_message("Nie jestem pewny gdzie to wyrzucić :(")
 
 @bot.tree.command(name='pa')
 async def bye(interaction: discord.Interaction):

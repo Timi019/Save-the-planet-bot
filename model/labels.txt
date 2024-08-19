@@ -1,5 +1,5 @@
-0 Yellow
-1 Red
-2 Blue
-3 Green
-4 Brown
+0 żółtego
+1 czerwonego
+2 niebieskiego
+3 zielonego
+4 brązowego
