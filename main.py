@@ -23,7 +23,9 @@ facts = [
     "Posadź drzewo. Drzewa dostarczają pożywienia i tlenu. Pomagają oszczędzać energię, oczyszczać powietrze i walczyć ze zmianą klimatu.",
     "Nie wlewaj chemikaliów do wody. Staraj się wybierać nietoksyczne chemikalia.",
     "Rower jest bardziej eko od pojazdów spalinowych. Jeździj nim więcej, aby walczyć ze zmianami klimatu.",
-    "Jeśli to możliwe, używaj elektrycznych środków transportu lub komunikacji miejskiej."
+    "Jeśli to możliwe, używaj elektrycznych środków transportu lub komunikacji miejskiej.",
+    "Bądź łowcą śmieci. Oprócz zbierania własnych śmieci, zabierz śmieci, które zostawili inni.",
+    "Łów ryby odpowiedzialnie. Przestrzegaj zasady „złów i wypuść”, aby zachować przy życiu więcej ryb."
 ]
 
 async def send_hourly_message():
