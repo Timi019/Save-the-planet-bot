@@ -7,8 +7,8 @@ This bot will help you with saving the environment by sending some advice to you
 
 ---
 
-todo list
-- fix the sheduler
+todo list:
+- ~~fix the sheduler~~
 - add more commands
 - add more advice
 - add more specific advice
