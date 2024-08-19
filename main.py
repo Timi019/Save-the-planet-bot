@@ -41,7 +41,7 @@ async def on_ready():
         scheduler = AsyncIOScheduler()
 
         #sends advice to the channel 
-        scheduler.add_job(send_hourly_message, 'interval', hours=1) 
+        scheduler.add_job(send_hourly_message, 'interval', minutes=2) 
 
         #starting the scheduler
         scheduler.start()
@@ -71,7 +71,7 @@ async def check(interaction: discord.Interaction, attachment: discord.Attachment
     result = result[0].strip()
     if int(con_score) >= 50:
         if result == "czerwonego":
-            await interaction.response.send_message(f"Jestem na {con_score}% pewny, że możesz wrzucić to do czerwonego lub żółtego pojemnika.")
+            await interaction.response.send_message(f"Jestem na {str(con_score)[:5]}% pewny, że możesz wrzucić to do czerwonego lub żółtego pojemnika.")
         else:
             await interaction.response.send_message(f"Jestem na {con_score}% pewny, że powinieneś wrzucić to do {result} pojemnika.")
     else:
