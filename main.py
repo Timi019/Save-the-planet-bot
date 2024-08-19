@@ -2,6 +2,7 @@ import discord,os,random
 from discord.ext import commands
 from discord import app_commands
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from model.model import detect_trash
 
 intents = discord.Intents.default()
 # enable reading messages
@@ -58,6 +59,12 @@ async def say(interaction: discord.Interaction, tekstdogadania: str):
 async def help(interaction: discord.Interaction):
     advice = random.choice(facts)
     await interaction.response.send_message(f"Oto twoja wskazówka: {advice} Dbaj o planetę aby nie była <:earthot:1275024848405532735>!")
+
+@bot.tree.command(name='gdzie_wrzucic')
+async def hello(interaction: discord.Interaction, attachment: discord.Attachment):
+    name = attachment.filename
+    await attachment.save(name)
+    result = detect_trash()
 
 @bot.tree.command(name='pa')
 async def bye(interaction: discord.Interaction):

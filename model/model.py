@@ -4,7 +4,7 @@ from PIL import Image, ImageOps
 import numpy
 
 #function
-def detect_bird(path, model,labels):
+def detect_trash(path, model,labels):
   # Disable scientific notation for clarity
   numpy.set_printoptions(suppress=True)
 
