@@ -1,4 +1,5 @@
 discord==2.3.2
 apscheduler==3.10.4
+tensorflow==2.13.0
 keras==2.13.1
 pillow==10.4.0

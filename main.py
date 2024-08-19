@@ -7,7 +7,8 @@ from model.model import detect_trash
 intents = discord.Intents.default()
 # enable reading messages
 intents.message_content = True
-token = os.environ["TOKEN"]
+#token = os.environ["TOKEN"]
+token = "MTI3MjkyMTQ5MjM1NDYyOTc0NQ.GKz8ni.x286BwhwsLL6bS5eRuhS_nBNaGb-Cj9f_aJTc0"
 bot = commands.Bot(command_prefix='/',intents=intents)
 earthot = bot.get_emoji(1275024848405532735)
 channel_id = 1275019583446843433
@@ -27,7 +28,7 @@ facts = [
 async def send_hourly_message():
     advice = random.choice(facts)
     c = bot.get_channel(channel_id)
-    await c.send(f"Oto godzinna wskazówka: {advice}. Dbaj o planetę aby nie była <:earthot:1275024848405532735>")
+    await c.send(f"Oto godzinna wskazówka: {advice} Dbaj o planetę aby nie była <:earthot:1275024848405532735>")
 
 @bot.event
 async def on_ready():
@@ -39,7 +40,7 @@ async def on_ready():
         scheduler = AsyncIOScheduler()
 
         #sends advice to the channel 
-        scheduler.add_job(send_hourly_message, 'interval', minutes=1) 
+        scheduler.add_job(send_hourly_message, 'interval', hours=1) 
 
         #starting the scheduler
         scheduler.start()
@@ -67,7 +68,7 @@ async def check(interaction: discord.Interaction, attachment: discord.Attachment
     result = detect_trash(name, "model/keras_model.h5", "model/labels.txt")
     con_score = result[1] * 100
     result = result[0].strip()
-    if int(con_score) >= 70:
+    if int(con_score) >= 50:
         if result == "czerwonego":
             await interaction.response.send_message(f"Jestem na {con_score}% pewny, że możesz wrzucić to do czerwonego lub żółtego pojemnika.")
         else:
