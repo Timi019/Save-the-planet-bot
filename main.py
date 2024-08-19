@@ -7,8 +7,7 @@ from model.model import detect_trash
 intents = discord.Intents.default()
 # enable reading messages
 intents.message_content = True
-#token = os.environ["TOKEN"]
-token = "MTI3MjkyMTQ5MjM1NDYyOTc0NQ.GKz8ni.x286BwhwsLL6bS5eRuhS_nBNaGb-Cj9f_aJTc0"
+token = os.environ["TOKEN"]
 bot = commands.Bot(command_prefix='/',intents=intents)
 earthot = bot.get_emoji(1275024848405532735)
 channel_id = 1275019583446843433
