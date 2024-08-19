@@ -61,7 +61,7 @@ async def help(interaction: discord.Interaction):
     await interaction.response.send_message(f"Oto twoja wskazówka: {advice} Dbaj o planetę aby nie była <:earthot:1275024848405532735>!")
 
 @bot.tree.command(name='gdzie_wrzucic')
-async def hello(interaction: discord.Interaction, attachment: discord.Attachment):
+async def check(interaction: discord.Interaction, attachment: discord.Attachment):
     name = attachment.filename
     await attachment.save(name)
     result = detect_trash(name, "model/keras_model.h5", "model/labels.txt")
@@ -74,6 +74,7 @@ async def hello(interaction: discord.Interaction, attachment: discord.Attachment
             await interaction.response.send_message(f"Jestem na {con_score}% pewny, że powinieneś wrzucić to do {result} pojemnika.")
     else:
         await interaction.response.send_message("Nie jestem pewny gdzie to wyrzucić :(")
+    os.remove(name)
 
 @bot.tree.command(name='pa')
 async def bye(interaction: discord.Interaction):
