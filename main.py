@@ -43,9 +43,9 @@ async def on_ready():
         scheduler = AsyncIOScheduler()
 
         #sends advice to the channel
-        scheduler.add_job(send_hourly_message, 'interval', minutes=2) 
+        scheduler.add_job(send_hourly_message, 'interval', minutes=2)
 
-        #starting the scheduler 
+        #starting the scheduler
         scheduler.start()
     except Exception as e:
         print(e)
@@ -71,7 +71,7 @@ async def check(interaction: discord.Interaction, attachment: discord.Attachment
     result = detect_trash(name, "model/keras_model.h5", "model/labels.txt")
     con_score = result[1] * 100
     result = result[0].strip()
-    if int(con_score) >= 50:
+    if int(con_score) >= 60:
         if result == "czerwonego":
             await interaction.response.send_message(f"Jestem na {str(con_score)[:5]}% pewny, że możesz wrzucić to do czerwonego lub żółtego pojemnika.")
         else:
