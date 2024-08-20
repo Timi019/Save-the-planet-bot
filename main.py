@@ -37,8 +37,8 @@ async def send_hourly_message():
 async def on_ready():
     try:    
         synced = await bot.tree.sync()
+        print(f'{bot.user} is ready')
         print(f"Synced {len(synced)} command(s)")
-        print('bot is ready')
         #initializing scheduler
         scheduler = AsyncIOScheduler()
 
