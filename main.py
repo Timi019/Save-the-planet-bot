@@ -75,7 +75,7 @@ async def check(interaction: discord.Interaction, attachment: discord.Attachment
         if result == "czerwonego":
             await interaction.response.send_message(f"Jestem na {str(con_score)[:5]}% pewny, że możesz wrzucić to do czerwonego lub żółtego pojemnika.")
         else:
-            await interaction.response.send_message(f"Jestem na {con_score}% pewny, że powinieneś wrzucić to do {result} pojemnika.")
+            await interaction.response.send_message(f"Jestem na {str(con_score)[:5]}% pewny, że powinieneś wrzucić to do {result} pojemnika.")
     else:
         await interaction.response.send_message("Nie jestem pewny gdzie to wyrzucić :(")
     os.remove(name)
