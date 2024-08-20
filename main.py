@@ -42,10 +42,10 @@ async def on_ready():
         #initializing scheduler
         scheduler = AsyncIOScheduler()
 
-        #sends advice to the channel 
+        #sends advice to the channel
         scheduler.add_job(send_hourly_message, 'interval', minutes=2) 
 
-        #starting the scheduler
+        #starting the scheduler 
         scheduler.start()
     except Exception as e:
         print(e)
