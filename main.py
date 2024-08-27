@@ -12,7 +12,7 @@ intents.message_content = True
 token = os.environ["TOKEN"]
 bot = commands.Bot(command_prefix='/',intents=intents)
 earthot = bot.get_emoji(1275024848405532735)
-channel_id = 1275019583446843433
+channel_id = 1278028503404515362
 facts = [
     "Ograniczaj, wykorzystuj ponownie i poddawaj recyklingowi. Ograniczaj to, co wyrzucasz. Postępuj zgodnie z zasadą trzech „R”, aby oszczędzać zasoby naturalne i miejsce na wysypiskach.",
     "Zostań wolontariuszem. Zgłoś się jako wolontariusz w akcjach sprzątania w swojej okolicy. Możesz również zaangażować się w ochronę pobliskich zbiorników wodnych.",
