@@ -79,7 +79,15 @@ async def check(interaction: discord.Interaction, attachment: discord.Attachment
     else:
         await interaction.response.send_message("Nie jestem pewny gdzie to wyrzucić :(")
     os.remove(name)
-
+@bot.tree.command(name='rzuc_kostka')
+@app_commands.describe(kostka = "Podaj rodzaj i ilość kostek(NdN)")
+async def coin(interaction: discord.Interaction, kostka: str):
+    num,dice = kostka.split('d')
+    allresults = []
+    for i in range(int(num)):
+        result = random.randint(1,int(dice))
+        allresults.append(result)
+    await interaction.response.send_message(f"Oto twój wynik: {str(allresults)[1:-1]}")
 @bot.tree.command(name='pa')
 async def bye(interaction: discord.Interaction):
     await interaction.response.send_message(f"Żegnaj, {interaction.user.mention}!")
